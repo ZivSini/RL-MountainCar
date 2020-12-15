@@ -111,16 +111,16 @@ def learn_sarsa():
 
 
 if __name__ == '__main__':
-    # with open('aprox_val_fun.npy', 'rb') as f:
-    #     w = np.load(f)
-    #     (p, v) = env.reset()
-    #     env.render()
-    #     done = False
-    #     while not done:
-    #         (p, v), reward, done, info = env.step(epsilon_greedy(w, 0, get_theta(p, v)))
-    #         env.render()
-    #     env.reset()
-    #     env.close()
+    with open('aprox_val_fun.npy', 'rb') as f:
+        w = np.load(f)
+        (p, v) = env.reset()
+        env.render()
+        done = False
+        while not done:
+            (p, v), reward, done, info = env.step(epsilon_greedy(w, 0, get_theta(p, v)))
+            env.render()
+        env.reset()
+        env.close()
 
     learn_sarsa()
 
